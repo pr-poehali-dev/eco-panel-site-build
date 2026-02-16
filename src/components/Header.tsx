@@ -34,9 +34,9 @@ const Header = () => {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-3">
           <img
-            src="https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/09c4845d-e17a-4766-b356-590450fd6718.jpg"
+            src="https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/e7c84482-0c9f-4e80-bcbc-ed60c08c6878.jpg"
             alt="ЭкоПанельСтрой"
-            className="h-10 w-10 rounded-lg object-cover"
+            className="h-12 w-12 rounded-lg object-cover brightness-110 contrast-110 drop-shadow-md"
           />
           <span className="font-heading font-bold text-2xl tracking-wide">
             <span className="text-primary">Эко</span>

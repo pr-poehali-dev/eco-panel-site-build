@@ -2,7 +2,7 @@ import Icon from "@/components/ui/icon";
 
 const features = [
   { icon: "Shield", title: "Гарантия 10 лет", desc: "На все виды выполненных работ" },
-  { icon: "Clock", title: "Точные сроки", desc: "Строительство от 45 дней" },
+  { icon: "Clock", title: "Точные сроки", desc: "Строительство от 7 дней" },
   { icon: "BadgeCheck", title: "Сертификаты", desc: "Все материалы сертифицированы" },
   { icon: "Leaf", title: "Экологичность", desc: "Безопасные материалы" },
 ];

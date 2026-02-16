@@ -8,12 +8,12 @@ const IMG_3 = "https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b33
 const categories = ["Все", "Склады", "Производство", "Коммерция"];
 
 const projects = [
-  { img: IMG_1, title: "Логистический центр «Восток»", category: "Склады", area: "4 800 м²", time: "62 дня" },
-  { img: IMG_2, title: "Производственный комплекс «Стальресурс»", category: "Производство", area: "6 200 м²", time: "78 дней" },
-  { img: IMG_3, title: "Торговый центр «Меридиан»", category: "Коммерция", area: "3 500 м²", time: "55 дней" },
-  { img: IMG_2, title: "Склад-холодильник «ФрешЛайн»", category: "Склады", area: "2 100 м²", time: "45 дней" },
-  { img: IMG_3, title: "Цех металлообработки", category: "Производство", area: "1 800 м²", time: "40 дней" },
-  { img: IMG_1, title: "Автоцентр «Драйв»", category: "Коммерция", area: "1 500 м²", time: "38 дней" },
+  { img: IMG_1, title: "Логистический центр «Восток»", category: "Склады", area: "4 800 м²", time: "14 дней" },
+  { img: IMG_2, title: "Производственный комплекс «Стальресурс»", category: "Производство", area: "6 200 м²", time: "18 дней" },
+  { img: IMG_3, title: "Торговый центр «Меридиан»", category: "Коммерция", area: "3 500 м²", time: "12 дней" },
+  { img: IMG_2, title: "Склад-холодильник «ФрешЛайн»", category: "Склады", area: "2 100 м²", time: "10 дней" },
+  { img: IMG_3, title: "Цех металлообработки", category: "Производство", area: "1 800 м²", time: "9 дней" },
+  { img: IMG_1, title: "Автоцентр «Драйв»", category: "Коммерция", area: "1 500 м²", time: "7 дней" },
 ];
 
 const PortfolioSection = () => {

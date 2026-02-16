@@ -41,24 +41,28 @@ const CalculatorSection = () => {
     new Intl.NumberFormat("ru-RU").format(n);
 
   return (
-    <section id="calculator" className="py-24 bg-white">
+    <section id="calculator" className="py-28 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Калькулятор</span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4">
-            Рассчитайте стоимость
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-[2px] bg-primary" />
+            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">Калькулятор</span>
+            <div className="w-12 h-[2px] bg-primary" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+            Рассчитайте <span className="text-primary italic">стоимость</span>
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-base">
             Интерактивный расчёт стоимости строительства на основе параметров вашего проекта
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-5 gap-8">
-            <div className="lg:col-span-3 bg-secondary/30 rounded-2xl p-8 space-y-8">
+            <div className="lg:col-span-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 space-y-8">
               <div>
                 <div className="flex justify-between items-center mb-4">
-                  <label className="font-semibold text-sm">Площадь здания</label>
+                  <label className="font-semibold text-sm text-foreground">Площадь здания</label>
                   <span className="text-sm font-heading font-bold text-primary">{area} м²</span>
                 </div>
                 <Slider
@@ -76,7 +80,7 @@ const CalculatorSection = () => {
 
               <div>
                 <div className="flex justify-between items-center mb-4">
-                  <label className="font-semibold text-sm">Высота стен</label>
+                  <label className="font-semibold text-sm text-foreground">Высота стен</label>
                   <span className="text-sm font-heading font-bold text-primary">{height} м</span>
                 </div>
                 <Slider
@@ -93,21 +97,21 @@ const CalculatorSection = () => {
               </div>
 
               <div>
-                <label className="font-semibold text-sm block mb-3">Тип утеплителя</label>
+                <label className="font-semibold text-sm block mb-3 text-foreground">Тип утеплителя</label>
                 <div className="grid grid-cols-3 gap-3">
                   {panelTypes.map((p) => (
                     <button
                       key={p.id}
                       onClick={() => setPanelType(p.id)}
-                      className={`rounded-xl p-3 text-center text-xs font-medium transition-all ${
+                      className={`rounded-xl p-3 text-center text-xs font-medium transition-all duration-300 ${
                         panelType === p.id
-                          ? "bg-primary text-white shadow-md"
-                          : "bg-white text-muted-foreground hover:bg-white/80 border border-border"
+                          ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                          : "bg-white/5 text-muted-foreground hover:bg-white/10 border border-white/10"
                       }`}
                     >
                       {p.label}
-                      <div className={`text-[10px] mt-1 ${panelType === p.id ? "text-white/70" : "text-muted-foreground/60"}`}>
-                        от {formatPrice(p.pricePerM2)} ₽/м²
+                      <div className={`text-[10px] mt-1 ${panelType === p.id ? "text-primary-foreground/70" : "text-muted-foreground/60"}`}>
+                        от {formatPrice(p.pricePerM2)} р/м²
                       </div>
                     </button>
                   ))}
@@ -115,16 +119,16 @@ const CalculatorSection = () => {
               </div>
 
               <div>
-                <label className="font-semibold text-sm block mb-3">Толщина панели</label>
+                <label className="font-semibold text-sm block mb-3 text-foreground">Толщина панели</label>
                 <div className="flex flex-wrap gap-2">
                   {thicknessOptions.map((t) => (
                     <button
                       key={t}
                       onClick={() => setThickness(t)}
-                      className={`rounded-lg px-4 py-2 text-xs font-medium transition-all ${
+                      className={`rounded-lg px-4 py-2 text-xs font-medium transition-all duration-300 ${
                         thickness === t
-                          ? "bg-primary text-white shadow-md"
-                          : "bg-white text-muted-foreground hover:bg-white/80 border border-border"
+                          ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                          : "bg-white/5 text-muted-foreground hover:bg-white/10 border border-white/10"
                       }`}
                     >
                       {t} мм
@@ -135,45 +139,45 @@ const CalculatorSection = () => {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="bg-foreground text-white rounded-2xl p-8 sticky top-24">
-                <h3 className="font-heading font-bold text-lg mb-6">Предварительный расчёт</h3>
+              <div className="bg-white/5 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 sticky top-24">
+                <h3 className="font-heading font-bold text-xl mb-6 text-foreground">Предварительный расчёт</h3>
 
                 <div className="space-y-4 mb-8">
                   <div className="flex justify-between text-sm">
-                    <span className="text-white/60">Сендвич-панели</span>
-                    <span className="font-medium">{formatPrice(result.panelCost)} ₽</span>
+                    <span className="text-muted-foreground">Сендвич-панели</span>
+                    <span className="font-medium text-foreground">{formatPrice(result.panelCost)} р</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-white/60">Каркас</span>
-                    <span className="font-medium">{formatPrice(result.frameCost)} ₽</span>
+                    <span className="text-muted-foreground">Каркас</span>
+                    <span className="font-medium text-foreground">{formatPrice(result.frameCost)} р</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-white/60">Монтажные работы</span>
-                    <span className="font-medium">{formatPrice(result.montage)} ₽</span>
+                    <span className="text-muted-foreground">Монтажные работы</span>
+                    <span className="font-medium text-foreground">{formatPrice(result.montage)} р</span>
                   </div>
-                  <div className="border-t border-white/20 pt-4 flex justify-between">
-                    <span className="font-semibold">Итого</span>
-                    <span className="font-heading font-bold text-xl text-green-400">
-                      {formatPrice(result.total)} ₽
+                  <div className="border-t border-primary/20 pt-4 flex justify-between">
+                    <span className="font-semibold text-foreground">Итого</span>
+                    <span className="font-heading font-bold text-2xl text-primary">
+                      {formatPrice(result.total)} р
                     </span>
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-4 mb-6 flex items-center gap-3">
-                  <Icon name="Clock" size={20} className="text-green-400 shrink-0" />
+                <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 mb-6 flex items-center gap-3">
+                  <Icon name="Clock" size={20} className="text-primary shrink-0" />
                   <div>
-                    <div className="text-xs text-white/60">Ориентировочный срок</div>
-                    <div className="font-heading font-bold">{result.days} дней</div>
+                    <div className="text-xs text-muted-foreground">Ориентировочный срок</div>
+                    <div className="font-heading font-bold text-foreground">{result.days} дней</div>
                   </div>
                 </div>
 
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold" size="lg" asChild>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12" size="lg" asChild>
                   <a href="#contacts">
                     Получить точный расчёт
                   </a>
                 </Button>
 
-                <p className="text-[10px] text-white/40 text-center mt-4">
+                <p className="text-[10px] text-muted-foreground text-center mt-4">
                   * Расчёт является предварительным. Точная стоимость зависит от проекта.
                 </p>
               </div>

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const posts = [
@@ -27,11 +26,17 @@ const posts = [
 
 const BlogSection = () => {
   return (
-    <section id="blog" className="py-24 bg-secondary/30">
+    <section id="blog" className="py-28 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Блог</span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4">Полезные статьи</h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-[2px] bg-primary" />
+            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">Блог</span>
+            <div className="w-12 h-[2px] bg-primary" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+            Полезные <span className="text-primary italic">статьи</span>
+          </h2>
           <p className="text-muted-foreground">Делимся экспертизой и рассказываем о тонкостях строительства</p>
         </div>
 
@@ -39,19 +44,21 @@ const BlogSection = () => {
           {posts.map((post, i) => (
             <article
               key={i}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 cursor-pointer"
             >
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                <Icon name="FileText" size={48} className="text-primary/30 group-hover:text-primary/50 transition-colors" />
+              <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center relative overflow-hidden">
+                <Icon name="FileText" size={48} className="text-primary/20 group-hover:text-primary/40 transition-colors duration-500" />
+                <div className="absolute top-4 left-4 bg-primary/20 border border-primary/30 text-primary text-[10px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                  {post.date}
+                </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <Badge variant="secondary" className="text-xs">{post.tag}</Badge>
+                  <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">{post.tag}</span>
                   <span className="text-xs text-muted-foreground">{post.readTime}</span>
                 </div>
-                <h3 className="font-heading font-semibold mb-2 group-hover:text-primary transition-colors">{post.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{post.excerpt}</p>
-                <div className="text-xs text-muted-foreground">{post.date}</div>
+                <h3 className="font-heading font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors duration-300">{post.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{post.excerpt}</p>
               </div>
             </article>
           ))}

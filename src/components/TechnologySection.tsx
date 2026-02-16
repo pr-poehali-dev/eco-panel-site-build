@@ -19,39 +19,43 @@ const advantages = [
 
 const TechnologySection = () => {
   return (
-    <section id="technology" className="py-24 bg-secondary/30">
+    <section id="technology" className="py-28 bg-[hsl(222.2,20%,6%)]">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Технология</span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4">
-            Сендвич-панели: надёжно и эффективно
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-[2px] bg-primary" />
+            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">Технология</span>
+            <div className="w-12 h-[2px] bg-primary" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+            Сендвич-панели: <span className="text-primary italic">надёжно</span> и эффективно
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-base">
             Трёхслойная конструкция обеспечивает отличные тепло- и звукоизоляционные характеристики
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <img
               src={IMG_PANEL}
               alt="Структура сендвич-панели"
-              className="rounded-2xl shadow-lg w-full object-cover aspect-square"
+              className="rounded-2xl w-full object-cover aspect-square border border-white/10"
             />
           </div>
           <div>
-            <h3 className="text-2xl font-heading font-semibold mb-8">Структура панели</h3>
-            <div className="space-y-6">
+            <h3 className="text-3xl font-heading font-semibold mb-10 text-foreground">Структура панели</h3>
+            <div className="space-y-0">
               {layers.map((layer, i) => (
-                <div key={i} className="flex gap-4">
+                <div key={i} className="flex gap-5">
                   <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm">
+                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading font-bold text-lg shrink-0">
                       {i + 1}
                     </div>
-                    {i < layers.length - 1 && <div className="w-px h-full bg-primary/20 mt-2" />}
+                    {i < layers.length - 1 && <div className="w-px h-full bg-primary/30 mt-2" />}
                   </div>
-                  <div className="pb-6">
-                    <div className="font-semibold mb-1">{layer.label}</div>
+                  <div className="pb-10">
+                    <div className="font-semibold text-lg text-foreground mb-1">{layer.label}</div>
                     <div className="text-sm text-muted-foreground leading-relaxed">{layer.desc}</div>
                   </div>
                 </div>
@@ -62,7 +66,7 @@ const TechnologySection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {advantages.map((a) => (
-            <div key={a.text} className="bg-white rounded-xl p-5 text-center shadow-sm">
+            <div key={a.text} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 text-center hover:border-primary/30 transition-colors duration-300">
               <Icon name={a.icon} size={28} className="text-primary mx-auto mb-3" />
               <div className="text-xs font-medium text-muted-foreground">{a.text}</div>
             </div>

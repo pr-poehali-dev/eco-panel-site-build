@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				heading: ['Montserrat', 'sans-serif'],
-				body: ['IBM Plex Sans', 'sans-serif'],
+				heading: ['Cormorant Garamond', 'serif'],
+				body: ['Golos Text', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

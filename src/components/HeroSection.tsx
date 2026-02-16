@@ -26,7 +26,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-lg text-white/80 mb-10 max-w-lg leading-relaxed">
-            Быстровозводимые конструкции для бизнеса — от проектирования до сдачи под ключ. Сроки от 45 дней.
+            Быстровозводимые конструкции для дома и бизнеса — от проектирования до сдачи под ключ. Сроки от 7 дней.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

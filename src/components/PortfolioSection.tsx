@@ -30,7 +30,6 @@ const PortfolioSection = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                 <Icon name={p.icon} size={24} className="text-primary" />
               </div>
-              <h3 className="font-heading font-bold text-lg mb-3">{p.title}</h3>
               <div className="flex gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5">
                   <Icon name="Ruler" size={14} className="text-primary" />

@@ -10,30 +10,29 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${HERO_IMG})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222.2,20%,8%)] via-[hsl(222.2,20%,8%)]/85 to-[hsl(222.2,20%,8%)]/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222.2,20%,8%)] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
       <div className="relative container mx-auto px-6 py-32">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 border border-primary/40 rounded-full px-5 py-2.5 mb-10">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-primary/90 text-sm font-medium tracking-wide">Принимаем заявки на 2026 год</span>
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <span className="text-white/90 text-sm font-medium">Принимаем заявки на 2026 год</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-8xl font-heading font-bold text-foreground leading-[0.95] mb-8 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
             Строим здания
             <br />
-            <span className="text-primary italic">из сендвич-панелей</span>
+            <span className="text-green-400">из сендвич-панелей</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/50 mb-12 max-w-xl leading-relaxed font-body">
+          <p className="text-lg text-white/80 mb-10 max-w-lg leading-relaxed">
             Быстровозводимые конструкции для бизнеса — от проектирования до сдачи под ключ. Сроки от 45 дней.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-base"
+              className="bg-primary hover:bg-primary/90 text-white font-semibold px-8"
               asChild
             >
               <a href="#calculator">
@@ -44,7 +43,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 font-semibold px-8 h-14 text-base"
+              className="border-white/30 text-white hover:bg-white/10 font-semibold px-8"
               asChild
             >
               <a href="#portfolio">
@@ -54,20 +53,18 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          <div className="flex gap-12 mt-20 pt-8 border-t border-primary/20">
+          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
             <div>
-              <div className="text-4xl md:text-5xl font-heading font-bold text-foreground">250+</div>
-              <div className="text-sm text-white/40 mt-1 font-body">объектов построено</div>
+              <div className="text-3xl font-heading font-bold text-white">250+</div>
+              <div className="text-sm text-white/60 mt-1">объектов построено</div>
             </div>
-            <div className="w-px bg-primary/30" />
             <div>
-              <div className="text-4xl md:text-5xl font-heading font-bold text-foreground">12</div>
-              <div className="text-sm text-white/40 mt-1 font-body">лет на рынке</div>
+              <div className="text-3xl font-heading font-bold text-white">12</div>
+              <div className="text-sm text-white/60 mt-1">лет на рынке</div>
             </div>
-            <div className="w-px bg-primary/30" />
             <div>
-              <div className="text-4xl md:text-5xl font-heading font-bold text-foreground">45</div>
-              <div className="text-sm text-white/40 mt-1 font-body">дней — мин. срок</div>
+              <div className="text-3xl font-heading font-bold text-white">45</div>
+              <div className="text-sm text-white/60 mt-1">дней — мин. срок</div>
             </div>
           </div>
         </div>

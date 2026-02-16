@@ -27,7 +27,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[hsl(222.2,20%,8%)]/90 backdrop-blur-xl border-b border-white/5"
+          ? "bg-white shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -35,7 +35,7 @@ const Header = () => {
         <a href="#hero" className="flex items-center gap-3">
           <span className="font-heading font-bold text-2xl tracking-wide">
             <span className="text-primary">Эко</span>
-            <span className="text-foreground">ПанельСтрой</span>
+            <span className={scrolled ? "text-foreground" : "text-white"}>ПанельСтрой</span>
           </span>
         </a>
 
@@ -44,7 +44,9 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className="relative text-sm font-medium text-white/60 hover:text-primary transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              className={`relative text-sm font-medium transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
+                scrolled ? "text-foreground/70" : "text-white/80"
+              }`}
             >
               {link.label}
             </a>
@@ -54,16 +56,18 @@ const Header = () => {
         <div className="hidden lg:flex">
           <a
             href="tel:+78001234567"
-            className="text-sm font-semibold text-primary flex items-center gap-2 hover:text-primary/80 transition-colors"
+            className={`text-sm font-semibold flex items-center gap-2 transition-colors ${
+              scrolled ? "text-primary" : "text-white"
+            }`}
           >
-            <Icon name="Phone" size={16} />
+            <Icon name="Phone" size={16} className="text-primary" />
             8 (800) 123-45-67
           </a>
         </div>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-foreground"
+          className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
           aria-label="Меню"
         >
           <Icon name={isOpen ? "X" : "Menu"} size={24} />
@@ -71,14 +75,14 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden bg-[hsl(222.2,20%,8%)]/95 backdrop-blur-xl border-t border-white/5 animate-fade-up">
+        <div className="lg:hidden bg-white border-t border-border shadow-lg animate-fade-up">
           <nav className="container mx-auto px-6 py-6 flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-sm font-medium py-3 text-white/60 hover:text-primary transition-colors border-b border-white/5 last:border-b-0"
+                className="text-sm font-medium py-3 text-foreground/70 hover:text-primary transition-colors border-b border-border last:border-b-0"
               >
                 {link.label}
               </a>

@@ -21,16 +21,12 @@ const PortfolioSection = () => {
   const filtered = active === "Все" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="portfolio" className="py-28 bg-background">
+    <section id="portfolio" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-12 h-[2px] bg-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">Портфолио</span>
-            <div className="w-12 h-[2px] bg-primary" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Наши <span className="text-primary italic">проекты</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Портфолио</span>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4">
+            Наши проекты
           </h2>
           <p className="text-muted-foreground">Каждый объект — это результат командной работы и внимания к деталям</p>
         </div>
@@ -42,8 +38,8 @@ const PortfolioSection = () => {
               onClick={() => setActive(cat)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 active === cat
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                  : "bg-white/5 text-muted-foreground hover:bg-white/10 border border-white/10"
+                  ? "bg-primary text-white shadow-lg"
+                  : "bg-secondary text-muted-foreground hover:bg-secondary/80 border border-border"
               }`}
             >
               {cat}
@@ -55,24 +51,26 @@ const PortfolioSection = () => {
           {filtered.map((p, i) => (
             <div
               key={i}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer"
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20"
             >
-              <img
-                src={p.img}
-                alt={p.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222.2,20%,8%)] via-[hsl(222.2,20%,8%)]/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="relative overflow-hidden aspect-[4/3]">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+              </div>
+              <div className="p-6">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wider mb-2">{p.category}</div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-3">{p.title}</h3>
-                <div className="flex gap-4 text-sm text-white/50">
+                <h3 className="font-heading font-bold text-lg mb-3">{p.title}</h3>
+                <div className="flex gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1.5">
-                    <Icon name="Ruler" size={14} className="text-primary/70" />
+                    <Icon name="Ruler" size={14} className="text-primary" />
                     {p.area}
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <Icon name="Clock" size={14} className="text-primary/70" />
+                    <Icon name="Clock" size={14} className="text-primary" />
                     {p.time}
                   </span>
                 </div>

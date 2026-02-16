@@ -26,16 +26,12 @@ const posts = [
 
 const BlogSection = () => {
   return (
-    <section id="blog" className="py-28 bg-background">
+    <section id="blog" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-12 h-[2px] bg-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">Блог</span>
-            <div className="w-12 h-[2px] bg-primary" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Полезные <span className="text-primary italic">статьи</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Блог</span>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4">
+            Полезные статьи
           </h2>
           <p className="text-muted-foreground">Делимся экспертизой и рассказываем о тонкостях строительства</p>
         </div>
@@ -44,11 +40,11 @@ const BlogSection = () => {
           {posts.map((post, i) => (
             <article
               key={i}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 cursor-pointer"
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer"
             >
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center relative overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-primary/10 to-accent flex items-center justify-center relative overflow-hidden">
                 <Icon name="FileText" size={48} className="text-primary/20 group-hover:text-primary/40 transition-colors duration-500" />
-                <div className="absolute top-4 left-4 bg-primary/20 border border-primary/30 text-primary text-[10px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                <div className="absolute top-4 left-4 bg-white text-primary text-[10px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                   {post.date}
                 </div>
               </div>
@@ -57,7 +53,7 @@ const BlogSection = () => {
                   <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">{post.tag}</span>
                   <span className="text-xs text-muted-foreground">{post.readTime}</span>
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors duration-300">{post.title}</h3>
+                <h3 className="font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors duration-300">{post.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{post.excerpt}</p>
               </div>
             </article>

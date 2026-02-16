@@ -35,18 +35,14 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-28 bg-gradient-to-b from-background to-[hsl(222.2,20%,6%)]">
+    <section id="services" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-12 h-[2px] bg-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">Услуги</span>
-            <div className="w-12 h-[2px] bg-primary" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Что мы <span className="text-primary italic">строим</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Услуги</span>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4">
+            Что мы строим
           </h2>
-          <p className="text-muted-foreground text-base">
+          <p className="text-muted-foreground">
             Полный цикл строительства быстровозводимых зданий из сендвич-панелей для любых задач бизнеса
           </p>
         </div>
@@ -55,13 +51,13 @@ const ServicesSection = () => {
           {services.map((s) => (
             <div
               key={s.title}
-              className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_0_30px_-5px_hsl(43,60%,58%,0.15)]"
+              className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20"
             >
-              <div className="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center mb-6 group-hover:bg-primary/25 transition-colors duration-300">
-                <Icon name={s.icon} size={26} className="text-primary" />
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <Icon name={s.icon} size={28} className="text-primary group-hover:text-white transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-heading font-semibold mb-3 text-foreground">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              <h3 className="text-xl font-heading font-bold mb-3">{s.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

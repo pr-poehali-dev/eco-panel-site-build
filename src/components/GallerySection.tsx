@@ -18,16 +18,12 @@ const GallerySection = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-28 bg-[hsl(222.2,20%,6%)]">
+    <section id="gallery" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-12 h-[2px] bg-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">Галерея</span>
-            <div className="w-12 h-[2px] bg-primary" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Фото наших <span className="text-primary italic">объектов</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Галерея</span>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4">
+            Фото наших объектов
           </h2>
         </div>
 
@@ -36,18 +32,18 @@ const GallerySection = () => {
             <button
               key={i}
               onClick={() => setSelected(i)}
-              className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-transparent hover:border-primary/40 transition-all duration-500"
+              className="relative group overflow-hidden rounded-2xl aspect-[4/3] shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-[hsl(222.2,20%,8%)]/0 group-hover:bg-[hsl(222.2,20%,8%)]/50 transition-colors duration-500 flex items-center justify-center">
-                <Icon name="ZoomIn" size={28} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center">
+                <Icon name="ZoomIn" size={28} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-[hsl(222.2,20%,8%)]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <span className="text-xs text-white/70">{img.alt}</span>
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <span className="text-xs text-white/90">{img.alt}</span>
               </div>
             </button>
           ))}
@@ -56,11 +52,11 @@ const GallerySection = () => {
 
       {selected !== null && (
         <div
-          className="fixed inset-0 z-50 bg-[hsl(222.2,20%,8%)]/95 backdrop-blur-sm flex items-center justify-center p-6"
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-6"
           onClick={() => setSelected(null)}
         >
           <button
-            className="absolute top-6 right-6 text-white/60 hover:text-primary transition-colors"
+            className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors"
             onClick={() => setSelected(null)}
           >
             <Icon name="X" size={32} />
@@ -70,7 +66,7 @@ const GallerySection = () => {
             alt={images[selected].alt}
             className="max-w-full max-h-[85vh] rounded-lg object-contain"
           />
-          <div className="absolute bottom-6 text-white/40 text-sm font-body">{images[selected].alt}</div>
+          <div className="absolute bottom-6 text-white/60 text-sm">{images[selected].alt}</div>
         </div>
       )}
     </section>

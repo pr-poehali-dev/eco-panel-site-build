@@ -27,19 +27,7 @@ const PortfolioSection = () => {
               key={i}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20 p-6"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                <Icon name={p.icon} size={24} className="text-primary" />
-              </div>
-              <div className="flex gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1.5">
-                  <Icon name="Ruler" size={14} className="text-primary" />
-                  {p.area}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Icon name="Clock" size={14} className="text-primary" />
-                  {p.time}
-                </span>
-              </div>
+              <span className="text-muted-foreground text-sm">{p.title}</span>
             </div>
           ))}
         </div>

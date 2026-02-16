@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const IMG_1 = "https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/94a9a597-e353-4b8d-ab67-0e12183ce598.jpg";
-const IMG_2 = "https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/b29377ac-52b1-4cac-8ea5-010fa900c7c1.jpg";
-const IMG_3 = "https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/4988a142-d50e-4dd7-a9aa-479263d43130.jpg";
+const IMG_1 = "https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/70569eb6-9d3a-4399-911d-3da0e7647941.jpg";
+const IMG_2 = "https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/2e461455-f06a-49ca-9253-24b2ad33eb0f.jpg";
+const IMG_3 = "https://cdn.poehali.dev/projects/f6d61094-e6bb-46f3-b9f3-2ecf1b339435/files/8e765d38-efe1-489e-ab82-634ead7cc46a.jpg";
 
 const categories = ["Все", "Склады", "Производство", "Коммерция"];
 

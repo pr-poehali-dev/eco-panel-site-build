@@ -69,7 +69,7 @@ const CalculatorSection = () => {
                   step={50}
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-2">
-                  <span>100 м²</span>
+                  <span>24 м²</span>
                   <span>10 000 м²</span>
                 </div>
               </div>
@@ -87,7 +87,7 @@ const CalculatorSection = () => {
                   step={0.5}
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-2">
-                  <span>3 м</span>
+                  <span>2 м</span>
                   <span>18 м</span>
                 </div>
               </div>

@@ -1,12 +1,12 @@
 import Icon from "@/components/ui/icon";
 
 const projects = [
-  { title: "Логистический центр «Восток»", area: "4 800 м²", time: "14 дней" },
-  { title: "Производственный комплекс «Стальресурс»", area: "6 200 м²", time: "18 дней" },
-  { title: "Торговый центр «Меридиан»", area: "3 500 м²", time: "12 дней" },
-  { title: "Склад-холодильник «ФрешЛайн»", area: "2 100 м²", time: "10 дней" },
-  { title: "Цех металлообработки", area: "1 800 м²", time: "9 дней" },
-  { title: "Автоцентр «Драйв»", area: "1 500 м²", time: "7 дней" },
+  { icon: "Warehouse", title: "Склад «Восток»", area: "4 800 м²", time: "14 дней" },
+  { icon: "Container", title: "Ангар для спецтехники", area: "3 200 м²", time: "12 дней" },
+  { icon: "Wrench", title: "Автосервис «Драйв»", area: "1 500 м²", time: "7 дней" },
+  { icon: "Car", title: "Гаражный комплекс на 12 боксов", area: "960 м²", time: "8 дней" },
+  { icon: "Home", title: "Хозблок для фермерского хозяйства", area: "240 м²", time: "4 дня" },
+  { icon: "Warehouse", title: "Тёплый склад «ФрешЛайн»", area: "2 100 м²", time: "10 дней" },
 ];
 
 const PortfolioSection = () => {
@@ -28,7 +28,7 @@ const PortfolioSection = () => {
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20 p-6"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                <Icon name="Building2" size={24} className="text-primary" />
+                <Icon name={p.icon} size={24} className="text-primary" />
               </div>
               <h3 className="font-heading font-bold text-lg mb-3">{p.title}</h3>
               <div className="flex gap-4 text-sm text-muted-foreground">
